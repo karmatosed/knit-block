@@ -1,5 +1,10 @@
 /**
  * 
+ * To do:
+ * formatting on the screen so it's not all bunched
+ * options for various outputs
+ * styling
+ * 
  */
 ( function( blocks, editor, i18n, element, components, _ ) {
 	var el = element.createElement;
@@ -77,9 +82,9 @@
 						tagName: 'ul',
 						multiline: 'li',
 						placeholder: i18n.__( 'What do you need for this pattern?', 'knit-block' ),
-						value: attributes.ingredients,
+						value: attributes.materials,
 						onChange: function( value ) {
-							props.setAttributes( { ingredients: value } );
+							props.setAttributes( { materials: value } );
 						},
 						className: 'materials',
 					} ),
@@ -87,10 +92,10 @@
 					el( RichText, {
 						tagName: 'div',
 						inline: false,
-						placeholder: i18n.__( 'Write instructions…', 'knit-block' ),
-						value: attributes.instructions,
+						placeholder: i18n.__( 'How do you make this?', 'knit-block' ),
+						value: attributes.pattern,
 						onChange: function( value ) {
-							props.setAttributes( { instructions: value } );
+							props.setAttributes( { pattern: value } );
 						},
 					} )
 				)
