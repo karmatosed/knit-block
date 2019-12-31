@@ -1,5 +1,4 @@
-# knit-block
-
+# A knitting pattern block
 Based on the awesome work of Gutenberg examples: https://github.com/WordPress/gutenberg-examples
 
 ## Log:
