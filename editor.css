@@ -1,1 +1,13 @@
 /* will be where editor specific styling goes */
+
+.pattern-image{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    min-height: 200px;
+    width: 100%;
+    text-align: center;
+    background: rgba(139,139,150,.1);
+}

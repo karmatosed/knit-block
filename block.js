@@ -30,10 +30,15 @@
 				selector: 'img',
 				attribute: 'src',
 			},
-			materials: {
+			yarn: {
 				type: 'array',
 				source: 'children',
-				selector: '.materials',
+				selector: '.yarn',
+			},
+			needles: {
+				type: 'array',
+				source: 'children',
+				selector: '.needles',
 			},
 			pattern: {
 				type: 'array',
@@ -77,16 +82,28 @@
 							}
 						} )
 					),
-					el( 'h3', {}, i18n.__( 'Materials', 'knit-block' ) ),
+					el( 'h2', {}, i18n.__( 'Materials', 'knit-block' ) ),
+					el( 'h5', {}, i18n.__( 'Yarn', 'knit-block' ) ),
 					el( RichText, {
 						tagName: 'ul',
 						multiline: 'li',
-						placeholder: i18n.__( 'What do you need for this pattern?', 'knit-block' ),
-						value: attributes.materials,
+						placeholder: i18n.__( 'What do yarn do you need?', 'knit-block' ),
+						value: attributes.yarn,
 						onChange: function( value ) {
-							props.setAttributes( { materials: value } );
+							props.setAttributes( { yarn: value } );
 						},
-						className: 'materials',
+						className: 'yarn',
+					} ),
+					el( 'h5', {}, i18n.__( 'Needles', 'knit-block' ) ),
+					el( RichText, {
+						tagName: 'ul',
+						multiline: 'li',
+						placeholder: i18n.__( 'What needles are used?', 'knit-block' ),
+						value: attributes.needles,
+						onChange: function( value ) {
+							props.setAttributes( { needles: value } );
+						},
+						className: 'needles',
 					} ),
 					el( 'h3', {}, i18n.__( 'Pattern', 'knit-block' ) ),
 					el( RichText, {
@@ -113,9 +130,12 @@
 						el( 'div', { className: 'pattern-image' },
 							el( 'img', { src: attributes.mediaURL } ),
 						),
-					el( 'h3', {}, i18n.__( 'Materials', 'knit-block' ) ),
+					el( 'h2', {}, i18n.__( 'Materials', 'knit-block' ) ),
 					el( RichText.Content, {
-						tagName: 'ul', className: 'materials', value: attributes.materials
+						tagName: 'ul', className: 'yarn', value: attributes.yarn
+					} ),	
+					el( RichText.Content, {
+						tagName: 'ul', className: 'Needles', value: attributes.needles
 					} ),
 					el( 'h3', {}, i18n.__( 'Pattern', 'knit-block' ) ),
 					el( RichText.Content, {
